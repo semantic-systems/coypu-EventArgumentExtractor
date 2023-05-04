@@ -1,0 +1,16 @@
+services:
+  blink:
+    build:
+      context: ./build
+    ports:
+      - 5287:5000
+    restart: unless-stopped
+    networks:
+      - demo_network
+    container_name: blink_container
+    image: blink_image
+
+
+networks:
+  demo_network:
+    external: true
