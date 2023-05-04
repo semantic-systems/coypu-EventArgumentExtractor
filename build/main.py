@@ -44,9 +44,9 @@ def main():
         sentence = Sentence(str(request.json['message']))
         # predict NER tags
         tagger.predict(sentence)
-        entities = [entity for entity in sentence.get_spans('ner')]
+        entities = {entity.text: {"tag": entity.tag, "confidence": entity.score} for entity in sentence.get_spans('ner')}
         response = {"sentence": str(request.json['message']),
-                    'entities': str(entities)}
+                    'entities': entities}
         http_code = 200
 
     else:
@@ -57,4 +57,4 @@ def main():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0:5290')
