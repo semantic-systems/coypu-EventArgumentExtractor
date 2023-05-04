@@ -11,14 +11,12 @@ RUN \
     && \
     apt-get -y clean
 
-COPY requirements.txt /src/
-RUN pip install -r /src/requirements.txt
+COPY /build /src/
+RUN pip install -r /src/build/requirements.txt
 
-COPY main.py /src/
-COPY rss-feed-library /src/rss-feed-library
 WORKDIR src
 
-EXPOSE 5282/tcp
+EXPOSE 5287/tcp
 
 ENTRYPOINT ["python"]
-CMD ["/src/main.py"]
+CMD ["/src/build/main.py"]
