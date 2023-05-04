@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 
 WORKDIR .
 
-EXPOSE 5287/tcp
+EXPOSE 5289/tcp
 
 ENTRYPOINT ["python"]
 CMD ["main.py"]

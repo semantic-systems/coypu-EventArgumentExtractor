@@ -3,7 +3,7 @@ services:
     build:
       context: ./build
     ports:
-      - 5287:5000
+      - 5289:5000
     restart: unless-stopped
     networks:
       - demo_network
