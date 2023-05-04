@@ -1,5 +1,5 @@
 services:
-  blink:
+  german_ner:
     build:
       context: ./build
     ports:
@@ -7,8 +7,8 @@ services:
     restart: unless-stopped
     networks:
       - demo_network
-    container_name: blink_container
-    image: blink_image
+    container_name: german_ner_container
+    image: german_ner_image
 
 
 networks:
