@@ -40,13 +40,13 @@ def main():
         response = {'error': 'no valid API key'}
         http_code = 401
 
-    elif ('message' in request.json):
+    elif ('messege' in request.json):
         sentence = Sentence(str(request.json['message']))
         # predict NER tags
         tagger.predict(sentence)
         entities = [entity for entity in sentence.get_spans('ner')]
         response = {"sentence": str(request.json['message']),
-                    'entities': entities}
+                    'entities': str(entities)}
         http_code = 200
 
     else:
