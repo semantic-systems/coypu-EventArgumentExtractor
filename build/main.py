@@ -40,7 +40,7 @@ def main():
         response = {'error': 'no valid API key'}
         http_code = 401
 
-    elif ('messege' in request.json):
+    elif ('message' in request.json):
         sentence = Sentence(str(request.json['message']))
         # predict NER tags
         tagger.predict(sentence)
