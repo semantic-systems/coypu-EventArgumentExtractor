@@ -34,7 +34,7 @@ def main():
 
     if 'key' in request.json:
         key = request.json['key']
-        if (key == '4QT4B4JNCL5SLJM5'): authenticated = True
+        if (key == 'E1CVJ4RJKO0BLVFY'): authenticated = True
 
     if (authenticated == False):
         response = {'error': 'no valid API key'}

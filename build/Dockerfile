@@ -11,12 +11,12 @@ RUN \
     && \
     apt-get -y clean
 
-COPY /build /src/
-RUN pip install -r /src/build/requirements.txt
+COPY . .
+RUN pip install -r requirements.txt
 
-WORKDIR src
+WORKDIR .
 
 EXPOSE 5287/tcp
 
 ENTRYPOINT ["python"]
-CMD ["/src/build/main.py"]
+CMD ["main.py"]
